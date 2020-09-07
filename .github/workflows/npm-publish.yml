@@ -25,4 +25,4 @@ jobs:
           npm publish
         env:
           CI: true
-          NODE_AUTH_TOKEN: dcb14b3936511c0cc21a126802f2f3437b1f4574
+          NODE_AUTH_TOKEN: ecad53f285c42acc92231585fd814cee82b28340
