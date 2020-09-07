@@ -15,13 +15,13 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.x
-          registry-url: https://registry.npmjs.org
+          registry-url: 'https://registry.npmjs.org'
       - name: npm publish
         run: |
           npm install
           npm run format
           npm run build
-          npm publish
+          npm publish --access public
         env:
           CI: true
-          NODE_AUTH_TOKEN: bd0373bc-fa25-4fe6-9209-3de9a1b8b29f
+          NODE_AUTH_TOKEN: 05db67c6-7e60-4314-a6dc-8b3d88d403fe
