@@ -24,4 +24,4 @@ jobs:
           npm publish --access public
         env:
           CI: true
-          NODE_AUTH_TOKEN: 05db67c6-7e60-4314-a6dc-8b3d88d403fe
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
