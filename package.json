@@ -1,0 +1,70 @@
+{
+  "name": "@arlequins/javascript-helpers",
+  "version": "1.0.0",
+  "description": "javascript-helpers modules",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "jest": {
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ],
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "engines": {
+    "node": ">=0.10.3 <0.12",
+    "npm" : "~1.0.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arlequins/javascript-helpers.git"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest --collect-coverage --detectOpenHandles",
+    "test:coverage": "npm test -- --coverage",
+    "test:watch": "jest --config jest.config.json --watch",
+    "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./lib",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "deploy": "npm publish"
+  },
+  "author": {
+    "name": "arlequins",
+    "email": "tiret.rouge@gmail.com",
+    "url": "https://github.com/arlequins"
+  },
+  "keywords": ["javascript", "helpers"],
+  "homepage": "https://github.com/arlequins/javascript-helpers",
+  "bugs": {
+    "url": "https://github.com/arlequins/javascript-helpers#readme"
+  },
+  "license": "MIT",
+  "files": [
+    "lib/**/*"
+  ],
+  "devDependencies": {
+    "@types/jest": "^26.0.13",
+    "jest": "^26.4.2",
+    "jest-cli": "^26.4.2",
+    "jest-coverage-badges": "^1.1.2",
+    "prettier": "^2.1.1",
+    "ts-jest": "^26.3.0",
+    "tscpaths": "0.0.9",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.3.0",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {}
+}
